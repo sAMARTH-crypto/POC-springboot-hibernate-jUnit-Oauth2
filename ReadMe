@@ -1,0 +1,85 @@
+# Employee Management System - Readme
+
+The Employee Management System is a Spring Boot application that provides RESTful APIs for managing employee records. It allows users to perform CRUD (Create, Read, Update, Delete) operations on employee data.
+
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Project Structure](#project-structure)
+3. [Dependencies](#dependencies)
+4. [Database Configuration](#database-configuration)
+5. [Running the Application](#running-the-application)
+6. [API Endpoints](#api-endpoints)
+7. [Testing](#testing)
+8. [Contributing](#contributing)
+9. [License](#license)
+
+## Project Overview
+
+The Employee Management System is developed using Spring Boot and follows the MVC (Model-View-Controller) architecture. It uses Spring JDBC Template for interacting with the MySQL database to perform CRUD operations on employee records.
+
+## Project Structure
+
+The project has the following structure:
+
+- **src/main/java**: Contains the Java source code for the project.
+  - **com.demo**: Root package for the project.
+    - **com.demo.controller**: Contains the `EmployeeController` class, which is a Spring REST controller responsible for handling HTTP requests related to employees.
+    - **com.demo.model**: Contains the `Employee` class, which represents the employee entity and is mapped to the database table using JPA annotations.
+    - **com.demo.service**: Contains the `EmployeeService` class, which provides business logic for the application and acts as an intermediary between the controller and the data access layer (DAO).
+    - **com.demo.dao**: Contains the `EmployeeDAO` class, which interacts with the database using Spring JDBC Template to perform CRUD operations on employee records.
+
+- **src/main/resources**: Contains the resource files for the project.
+  - **application.properties**: Properties file that includes the database connection settings and Hibernate configuration.
+
+- **src/test/java**: Contains the test cases for the project.
+  - **com.demo.testcases**: Contains the `EmployeeControllerTest` class, which performs unit tests on the `EmployeeController` class using Spring MockMVC and Mockito.
+
+## Dependencies
+
+The application has the following dependencies:
+
+- Spring Boot Web Starter: For building RESTful APIs.
+- Spring Boot JDBC Starter: For database access using Spring JDBC Template.
+- MySQL Connector Java: To interact with the MySQL database.
+- Spring Boot Test Starter: For testing the application using JUnit and Mockito.
+- Jackson Databind: For JSON serialization/deserialization.
+
+## Database Configuration
+
+The application connects to a MySQL database using the configuration specified in the `application.properties` file. Ensure that you have the appropriate MySQL server running and the database URL, username, and password are correctly set in the properties file.
+
+## Running the Application
+
+To run the application, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Open the project in your preferred IDE.
+3. Configure the MySQL database properties in the `application.properties` file.
+4. Run the application as a Spring Boot application.
+
+## API Endpoints
+
+The application provides the following API endpoints:
+
+- `GET /getEmps`: Retrieves a list of all employees.
+- `GET /getempbyid/{id}`: Retrieves an employee by ID.
+- `POST /addemp`: Adds a new employee record.
+- `DELETE /delete/{id}`: Deletes an employee record by ID.
+- `PUT /updateemp`: Updates an existing employee record.
+
+## Testing
+
+The project includes test cases for the `EmployeeController` class. The test cases use Spring MockMVC and Mockito to mock the `EmployeeService` and perform unit tests on the controller endpoints.
+
+## Contributing
+
+Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Feel free to download the project and modify it according to your needs. Happy coding!
